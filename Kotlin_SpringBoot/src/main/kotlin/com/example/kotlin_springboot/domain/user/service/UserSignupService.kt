@@ -4,21 +4,25 @@ import com.example.kotlin_springboot.domain.user.domain.User
 import com.example.kotlin_springboot.domain.user.domain.UserRepository
 import com.example.kotlin_springboot.domain.user.presentation.dto.request.UserSignupRequest
 import org.springframework.stereotype.Service
-import java.util.*
+import java.util.UUID
 import javax.transaction.Transactional
 
 @Service
 class UserSignupService (
-    private val userRepository : UserRepository
+    private val userRepository: UserRepository
 ) {
     @Transactional
     fun signup(userSignupRequest: UserSignupRequest) {
 
-        val user = User(
-            id = UUID(0,0),
-            email = userSignupRequest.email,
-            password = userSignupRequest.password
+        if (userRepository.existsByEmail(userSignupRequest.email)) {}
+
+        userRepository.save(
+            User(
+                id = UUID(0, 0),
+                password = userSignupRequest.password,
+                email = userSignupRequest.email
+
+            )
         )
-        userRepository.save(user)
     }
 }
