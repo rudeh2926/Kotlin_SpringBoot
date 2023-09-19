@@ -8,7 +8,6 @@ import com.example.kotlin_springboot.domain.user.presentation.dto.request.UserLo
 import com.example.kotlin_springboot.global.security.jwt.dto.TokenResponse
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
-import javax.transaction.Transactional
 
 @Service
 class UserLoginService(
