@@ -1,4 +1,4 @@
-package com.example.kotlin_springboot.global.security.auth
+package com.example.kotlin_springboot.global.security.principle
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails

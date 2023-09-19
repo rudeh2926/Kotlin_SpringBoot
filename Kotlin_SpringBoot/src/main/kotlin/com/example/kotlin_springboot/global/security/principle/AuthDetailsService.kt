@@ -1,4 +1,4 @@
-package com.example.kotlin_springboot.global.security.auth
+package com.example.kotlin_springboot.global.security.principle
 
 import com.example.kotlin_springboot.domain.user.domain.User
 import com.example.kotlin_springboot.domain.user.facade.UserFacade
