@@ -7,6 +7,10 @@ import javax.persistence.Id
 @Entity
 class User (
     @Id val id : UUID?,
-    val password : String,
+    var password : String,
     val email : String
-)
+) {
+    fun changePassword(password: String) {
+        this.password = password
+    }
+}
