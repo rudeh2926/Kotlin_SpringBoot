@@ -1,10 +1,11 @@
 package com.example.kotlin_springboot.global.security.principle
 
+import com.example.kotlin_springboot.domain.user.domain.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 class AuthDetails(
-    private val user: String
+    private val user: User
 ) : UserDetails{
     override fun getAuthorities(): Collection<GrantedAuthority?>? {
         return null
