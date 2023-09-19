@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest
 
 @RequiredArgsConstructor
 @Component
-class JwtProvider (
+class JwtTokenProvider (
     private val authDetailsService: AuthDetailsService,
     @Value("\${spring.jwt.key}")
     private var key: String? = null,
