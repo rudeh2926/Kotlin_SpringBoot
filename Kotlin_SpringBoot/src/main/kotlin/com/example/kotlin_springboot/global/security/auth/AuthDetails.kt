@@ -1,36 +1,36 @@
 package com.example.kotlin_springboot.global.security.auth
 
-import com.example.kotlin_springboot.domain.user.domain.User
 import org.springframework.security.core.GrantedAuthority
+import org.springframework.security.core.userdetails.UserDetails
 
-class AuthDetails (
-    private val user: User
-) {
-    fun getAuthorities(): Collection<GrantedAuthority?>? {
+class AuthDetails(
+    private val user: String
+) : UserDetails{
+    override fun getAuthorities(): Collection<GrantedAuthority?>? {
         return null
     }
 
-    fun getPassword(): String? {
+     override fun getPassword(): String? {
         return null
     }
 
-    fun getUsername(): String {
+    override fun getUsername(): String {
         return user.email
     }
 
-    fun isAccountNonExpired(): Boolean {
+    override fun isAccountNonExpired(): Boolean {
         return true
     }
 
-    fun isAccountNonLocked(): Boolean {
+    override fun isAccountNonLocked(): Boolean {
         return true
     }
 
-    fun isCredentialsNonExpired(): Boolean {
+    override fun isCredentialsNonExpired(): Boolean {
         return true
     }
 
-    fun isEnabled(): Boolean {
+    override fun isEnabled(): Boolean {
         return true
     }
 }
