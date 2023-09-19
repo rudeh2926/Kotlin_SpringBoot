@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component
 class UserFacade(
    private val userRepository: UserRepository
 ) {
-    fun getCurrentUser(): User? {
+    fun getCurrentUser(): User {
         val email : String = SecurityContextHolder.getContext().authentication.name
         return getUserEmail(email)
     }
 
-    fun getUserEmail(email : String) : User?{
+    fun getUserEmail(email : String) : User{
         return userRepository.findByEmail(email).orElseThrow{UserNotFoundException}
     }
 }
